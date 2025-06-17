@@ -26,30 +26,324 @@ else
                     <th>Pomodoro Duration (mins)</th>
                     <th>Break Duration (mins)</th>
                     <th>Created At</th>
+                    <th>Status</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
-
-
-
                 @foreach (var sched in Model)
                 {
                     <tr>
                         <td>@sched.Activity</td>
                         <td>@sched.StartTime.ToString("MMM dd, yyyy hh:mm tt")</td>
                         <td>@sched.EndTime.ToString("MMM dd, yyyy hh:mm tt")</td>
-                        <td>@sched.PomodoroDuration.ToString() + " mins"</td>
-                        <td>@sched.BreakDuration.ToString() + " mins"</td>
+                        <td>@sched.PomodoroDuration mins</td>
+                        <td>@sched.BreakDuration mins</td>
                         <td>@sched.CreatedAt.ToString("MMM dd, yyyy hh:mm tt")</td>
+                        <td>@sched.Status</td>
+                        <td>
+                            <button class="btn btn-success btn-sm start-btn"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#pomodoroModal"
+                                    data-start="@sched.StartTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")"
+                                    data-end="@sched.EndTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")"
+                                    data-break="@sched.BreakDuration">
+                                Start
+                            </button>
+
+                            <button class="btn btn-primary btn-sm update-btn"
+                                    data-id="@sched.Id"
+                                    data-activity="@sched.Activity"
+                                    data-pomodoro="@sched.PomodoroDuration"
+                                    data-break="@sched.BreakDuration">
+                                Update
+                            </button>
+
+                            <!-- Delete Button -->
+                            <button class="btn btn-danger btn-sm delete-btn" data-id="@sched.Id">
+                                Delete
+                            </button>
+                        </td>
+
                     </tr>
                 }
             </tbody>
         </table>
-
     }
     else
     {
         <p>No schedules found.</p>
     }
+}
 
+
+
+
+<!-- Update Modal -->
+<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateModalLabel">Update Schedule</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="updateId" />
+
+                <div class="mb-3">
+                    <label>Activity</label>
+                    <input type="text" id="updateActivity" class="form-control" />
+                </div>
+
+                <div class="mb-3">
+                    <label>Pomodoro Duration (mins)</label>
+                    <input type="number" id="updatePomodoro" class="form-control" />
+                </div>
+
+                <div class="mb-3">
+                    <label>Break Duration (mins)</label>
+                    <input type="number" id="updateBreak" class="form-control" />
+                </div>
+
+                <!-- Added Status Field -->
+                <div class="mb-3">
+                    <label>Status</label>
+                    <select id="updateStatus" class="form-control">
+                        <option value="Pending">Pending</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Completed">Completed</option>
+                    </select>
+                </div>
+
+                <button type="button" id="saveUpdateBtn" class="btn btn-success">Save Changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- Bootstrap Modal -->
+<div class="modal fade" id="pomodoroModal" tabindex="-1" aria-labelledby="pomodoroModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Timer</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <h4 id="countdownTimer">Loading...</h4>
+                <br />
+                <button id="startBreakBtn" class="btn btn-info mt-2">Start Break</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+
+
+
+            // Open Update Modal and populate fields
+            $('.update-btn').click(function () {
+                var id = $(this).data('id');
+                var activity = $(this).data('activity');
+                var pomodoro = $(this).data('pomodoro');
+                var breakDuration = $(this).data('break');
+
+                $('#updateId').val(id);
+                $('#updateActivity').val(activity);
+                $('#updatePomodoro').val(pomodoro);
+                $('#updateBreak').val(breakDuration);
+
+                $('#updateModal').modal('show');
+            });
+
+            // Handle Save Update Button
+            $('#saveUpdateBtn').click(function () {
+                var id = $('#updateId').val();
+                var activity = $('#updateActivity').val();
+                var pomodoroDuration = $('#updatePomodoro').val();
+                var breakDuration = $('#updateBreak').val();
+                var status = $('#updateStatus').val(); // Get status value
+
+                $.ajax({
+                    url: '/Timer/UpdatePomodoro',
+                    type: 'POST',
+                    data: {
+                        Id: id,
+                        Activity: activity,
+                        PomodoroDuration: pomodoroDuration,
+                        BreakDuration: breakDuration,
+                        Status: status // Pass status to the server
+                    },
+                    success: function (response) {
+                        if (response.success) {
+                            alert('Schedule updated successfully!');
+                            location.reload();
+                        } else {
+                            alert('Error: ' + response.message);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        alert('AJAX error: ' + error);
+                    }
+                });
+            });
+
+
+
+
+
+
+
+
+
+
+
+            var countdownInterval;
+            var currentBreakDuration = 0;
+            var pomodoroDuration = 0;
+            var pomodoroRemaining = 0;
+            var isBreakRunning = false;
+            var breakUsed = false; 
+
+            // When 'Start' button clicked
+            $('.start-btn').click(function () {
+                clearInterval(countdownInterval);
+
+                pomodoroDuration = parseInt($(this).closest('tr').find('td:nth-child(4)').text()); // PomodoroDuration mins
+                currentBreakDuration = parseInt($(this).data('break')); // BreakDuration mins
+                pomodoroRemaining = pomodoroDuration * 60; // convert to seconds
+
+                isBreakRunning = false;
+                breakUsed = false; // reset break availability when new Pomodoro starts
+
+                $('#startBreakBtn').show(); 
+
+                startPomodoroTimer();
+            });
+
+            // Start Pomodoro Timer
+            function startPomodoroTimer() {
+                var $timer = $('#countdownTimer');
+
+                function updatePomodoroCountdown() {
+                    if (pomodoroRemaining <= 0) {
+                        clearInterval(countdownInterval);
+                        $timer.text("Pomodoro Time's Up!");
+                        return;
+                    }
+
+                    var minutes = Math.floor((pomodoroRemaining / 60));
+                    var seconds = pomodoroRemaining % 60;
+
+                    //$timer.text("Pomodoro: " + minutes + "m " + seconds + "s remaining");
+                    $timer.text(minutes + "m " + seconds + "s remaining");
+
+                    pomodoroRemaining--;
+                }
+
+                updatePomodoroCountdown();
+                countdownInterval = setInterval(updatePomodoroCountdown, 1000);
+            }
+
+            // Start Break Timer when "Start Break" button is clicked
+            $('#startBreakBtn').click(function () {
+                if (isBreakRunning || breakUsed) return; // prevent multiple clicks
+
+                clearInterval(countdownInterval);
+                isBreakRunning = true;
+                breakUsed = true; // mark break as used
+
+                $('#startBreakBtn').hide(); // hide button after clicking once
+
+                var $timer = $('#countdownTimer');
+                var breakRemaining = currentBreakDuration * 60; // seconds
+
+                function updateBreakCountdown() {
+                    if (breakRemaining <= 0) {
+                        clearInterval(countdownInterval);
+                        isBreakRunning = false;
+                        $timer.text("Break Over! Resuming Pomodoro...");
+                        startPomodoroTimer(); // resume Pomodoro after break
+                        return;
+                    }
+
+                    var minutes = Math.floor((breakRemaining / 60));
+                    var seconds = breakRemaining % 60;
+
+                    $timer.text("Break: " + minutes + "m " + seconds + "s remaining");
+
+                    breakRemaining--;
+                }
+
+                updateBreakCountdown();
+                countdownInterval = setInterval(updateBreakCountdown, 1000);
+            });
+
+            // Handle Delete Button Click
+            $('.delete-btn').click(function () {
+                if (confirm('Are you sure you want to delete this schedule?')) {
+                    var id = $(this).data('id');
+
+                    $.ajax({
+                        url: '/Timer/DeletePomodoro', // This is the controller action you need to implement
+                        type: 'POST',
+                        data: { id: id },
+                        success: function (response) {
+                            if (response.success) {
+                                alert('Schedule deleted successfully!');
+                                location.reload(); // Refresh the page to reflect changes
+                            } else {
+                                alert('Error: ' + response.message);
+                            }
+                        },
+                        error: function (xhr, status, error) {
+                            alert('AJAX error: ' + error);
+                        }
+                    });
+                }
+            });
+
+
+            $('.countdown').each(function () {
+                var $this = $(this);
+                var startTime = new Date($this.data('start'));
+                var endTime = new Date($this.data('end'));
+
+                function updateRowCountdown() {
+                    var now = new Date();
+                    var distance = endTime - now;
+
+                    if (now < startTime) {
+                        $this.text("Not started yet");
+                        return;
+                    }
+
+                    if (distance <= 0) {
+                        $this.text("Time's Up!");
+                        return;
+                    }
+
+                    var hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+                    var minutes = Math.floor((distance / (1000 * 60)) % 60);
+                    var seconds = Math.floor((distance / 1000) % 60);
+
+                    $this.text(hours + "h " + minutes + "m " + seconds + "s");
+                }
+
+                updateRowCountdown();
+                setInterval(updateRowCountdown, 1000);
+            });
+        });
+    </script>
 }

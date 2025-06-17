@@ -11,8 +11,72 @@ namespace StudentPlannerApp.Controllers
     {
         private readonly string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 
-        [HttpGet]
-        
+
+        [HttpPost]
+        public ActionResult DeletePomodoro(int id)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "DELETE FROM PomodoroSchedule WHERE Id = @Id";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Id", id);
+
+                    conn.Open();
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        return Json(new { success = true });
+                    }
+                    else
+                    {
+                        return Json(new { success = false, message = "Schedule not found." });
+                    }
+                }
+            }
+        }
+
+
+        [HttpPost]
+        public ActionResult UpdatePomodoro(PomodoroSchedule schedule)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = @"UPDATE PomodoroSchedule
+                         SET Activity = @Activity, 
+                             PomodoroDuration = @PomodoroDuration, 
+                             BreakDuration = @BreakDuration,
+                             Status = @Status
+                         WHERE Id = @Id";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Activity", schedule.Activity);
+                    cmd.Parameters.AddWithValue("@PomodoroDuration", schedule.PomodoroDuration);
+                    cmd.Parameters.AddWithValue("@BreakDuration", schedule.BreakDuration);
+                    cmd.Parameters.AddWithValue("@Status", schedule.Status);
+                    cmd.Parameters.AddWithValue("@Id", schedule.Id);
+
+                    conn.Open();
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    conn.Close();
+
+                    if (rowsAffected > 0)
+                    {
+                        return Json(new { success = true });
+                    }
+                    else
+                    {
+                        return Json(new { success = false, message = "Schedule not found." });
+                    }
+                }
+            }
+        }
+
+
+
 
 
         [HttpPost]
@@ -149,5 +213,13 @@ namespace StudentPlannerApp.Controllers
             TempData["Message"] = "Pomodoro activity notes saved!";
             return RedirectToAction("Pomodoro");
         }
+
+
+
+
+
+
+
+
     }
 }

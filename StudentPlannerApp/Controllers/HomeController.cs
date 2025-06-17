@@ -37,7 +37,8 @@ namespace StudentPlannerApp.Controllers
                         BreakDuration = Convert.ToInt32(reader["BreakDuration"]),
                         PomodoroDuration = Convert.ToInt32(reader["PomodoroDuration"]),
                         Activity = reader["Activity"].ToString(),
-                        CreatedAt = Convert.ToDateTime(reader["CreatedAt"])
+                        CreatedAt = Convert.ToDateTime(reader["CreatedAt"]),
+                        Status = reader["Status"].ToString(),
                     });
                 }
             }
