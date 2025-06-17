@@ -1,0 +1,55 @@
+﻿@model List<StudentPlannerApp.Models.PomodoroSchedule>
+
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    bool isLoggedIn = Session["UserId"] != null;
+    string fullName = Session["Fullname"] as string;
+}
+
+@if (!isLoggedIn)
+{
+    <h2>Welcome, Guest!</h2>
+    <p>Please <a href="/User/Login">login</a> or <a href="/User/Register">register</a> to use the planner.</p>
+}
+else
+{
+    if (Model != null && Model.Count > 0)
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Activity</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Pomodoro Duration (mins)</th>
+                    <th>Break Duration (mins)</th>
+                    <th>Created At</th>
+                </tr>
+            </thead>
+            <tbody>
+
+
+
+                @foreach (var sched in Model)
+                {
+                    <tr>
+                        <td>@sched.Activity</td>
+                        <td>@sched.StartTime.ToString("MMM dd, yyyy hh:mm tt")</td>
+                        <td>@sched.EndTime.ToString("MMM dd, yyyy hh:mm tt")</td>
+                        <td>@sched.PomodoroDuration.ToString() + " mins"</td>
+                        <td>@sched.BreakDuration.ToString() + " mins"</td>
+                        <td>@sched.CreatedAt.ToString("MMM dd, yyyy hh:mm tt")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    }
+    else
+    {
+        <p>No schedules found.</p>
+    }
+
+}
