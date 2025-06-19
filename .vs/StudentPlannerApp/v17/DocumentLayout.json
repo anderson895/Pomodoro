@@ -3,24 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\Desktop\\source\\repos\\StudentPlannerApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E448CB7F-8F50-4596-A093-2C63AF9FB851}|StudentPlannerApp\\StudentPlannerApp.csproj|c:\\users\\desktop\\source\\repos\\studentplannerapp\\studentplannerapp\\controllers\\timercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E448CB7F-8F50-4596-A093-2C63AF9FB851}|StudentPlannerApp\\StudentPlannerApp.csproj|solutionrelative:studentplannerapp\\controllers\\timercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E448CB7F-8F50-4596-A093-2C63AF9FB851}|StudentPlannerApp\\StudentPlannerApp.csproj|c:\\users\\desktop\\source\\repos\\studentplannerapp\\studentplannerapp\\views\\user\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E448CB7F-8F50-4596-A093-2C63AF9FB851}|StudentPlannerApp\\StudentPlannerApp.csproj|solutionrelative:studentplannerapp\\views\\user\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E448CB7F-8F50-4596-A093-2C63AF9FB851}|StudentPlannerApp\\StudentPlannerApp.csproj|C:\\Users\\Desktop\\source\\repos\\StudentPlannerApp\\studentplannerapp\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E448CB7F-8F50-4596-A093-2C63AF9FB851}|StudentPlannerApp\\StudentPlannerApp.csproj|solutionrelative:studentplannerapp\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E448CB7F-8F50-4596-A093-2C63AF9FB851}|StudentPlannerApp\\StudentPlannerApp.csproj|c:\\users\\desktop\\source\\repos\\studentplannerapp\\studentplannerapp\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E448CB7F-8F50-4596-A093-2C63AF9FB851}|StudentPlannerApp\\StudentPlannerApp.csproj|solutionrelative:studentplannerapp\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E448CB7F-8F50-4596-A093-2C63AF9FB851}|StudentPlannerApp\\StudentPlannerApp.csproj|c:\\users\\desktop\\source\\repos\\studentplannerapp\\studentplannerapp\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E448CB7F-8F50-4596-A093-2C63AF9FB851}|StudentPlannerApp\\StudentPlannerApp.csproj|solutionrelative:studentplannerapp\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E448CB7F-8F50-4596-A093-2C63AF9FB851}|StudentPlannerApp\\StudentPlannerApp.csproj|c:\\users\\desktop\\source\\repos\\studentplannerapp\\studentplannerapp\\views\\user\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E448CB7F-8F50-4596-A093-2C63AF9FB851}|StudentPlannerApp\\StudentPlannerApp.csproj|solutionrelative:studentplannerapp\\views\\user\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E448CB7F-8F50-4596-A093-2C63AF9FB851}|StudentPlannerApp\\StudentPlannerApp.csproj|c:\\users\\desktop\\source\\repos\\studentplannerapp\\studentplannerapp\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E448CB7F-8F50-4596-A093-2C63AF9FB851}|StudentPlannerApp\\StudentPlannerApp.csproj|solutionrelative:studentplannerapp\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E448CB7F-8F50-4596-A093-2C63AF9FB851}|StudentPlannerApp\\StudentPlannerApp.csproj|C:\\Users\\Desktop\\source\\repos\\StudentPlannerApp\\studentplannerapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E448CB7F-8F50-4596-A093-2C63AF9FB851}|StudentPlannerApp\\StudentPlannerApp.csproj|solutionrelative:studentplannerapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E448CB7F-8F50-4596-A093-2C63AF9FB851}|StudentPlannerApp\\StudentPlannerApp.csproj|c:\\users\\desktop\\source\\repos\\studentplannerapp\\studentplannerapp\\models\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E448CB7F-8F50-4596-A093-2C63AF9FB851}|StudentPlannerApp\\StudentPlannerApp.csproj|solutionrelative:studentplannerapp\\models\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E448CB7F-8F50-4596-A093-2C63AF9FB851}|StudentPlannerApp\\StudentPlannerApp.csproj|C:\\Users\\Desktop\\source\\repos\\StudentPlannerApp\\studentplannerapp\\models\\studysession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E448CB7F-8F50-4596-A093-2C63AF9FB851}|StudentPlannerApp\\StudentPlannerApp.csproj|solutionrelative:studentplannerapp\\models\\studysession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E448CB7F-8F50-4596-A093-2C63AF9FB851}|StudentPlannerApp\\StudentPlannerApp.csproj|C:\\Users\\Desktop\\source\\repos\\StudentPlannerApp\\studentplannerapp\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E448CB7F-8F50-4596-A093-2C63AF9FB851}|StudentPlannerApp\\StudentPlannerApp.csproj|solutionrelative:studentplannerapp\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E448CB7F-8F50-4596-A093-2C63AF9FB851}|StudentPlannerApp\\StudentPlannerApp.csproj|c:\\users\\desktop\\source\\repos\\studentplannerapp\\studentplannerapp\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{E448CB7F-8F50-4596-A093-2C63AF9FB851}|StudentPlannerApp\\StudentPlannerApp.csproj|solutionrelative:studentplannerapp\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E448CB7F-8F50-4596-A093-2C63AF9FB851}|StudentPlannerApp\\StudentPlannerApp.csproj|c:\\users\\desktop\\source\\repos\\studentplannerapp\\studentplannerapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E448CB7F-8F50-4596-A093-2C63AF9FB851}|StudentPlannerApp\\StudentPlannerApp.csproj|solutionrelative:studentplannerapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E448CB7F-8F50-4596-A093-2C63AF9FB851}|StudentPlannerApp\\StudentPlannerApp.csproj|c:\\users\\desktop\\source\\repos\\studentplannerapp\\studentplannerapp\\controllers\\timercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E448CB7F-8F50-4596-A093-2C63AF9FB851}|StudentPlannerApp\\StudentPlannerApp.csproj|solutionrelative:studentplannerapp\\controllers\\timercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E448CB7F-8F50-4596-A093-2C63AF9FB851}|StudentPlannerApp\\StudentPlannerApp.csproj|C:\\Users\\Desktop\\source\\repos\\StudentPlannerApp\\studentplannerapp\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E448CB7F-8F50-4596-A093-2C63AF9FB851}|StudentPlannerApp\\StudentPlannerApp.csproj|solutionrelative:studentplannerapp\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E448CB7F-8F50-4596-A093-2C63AF9FB851}|StudentPlannerApp\\StudentPlannerApp.csproj|C:\\Users\\Desktop\\source\\repos\\StudentPlannerApp\\studentplannerapp\\views\\timer\\pomodoro.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -42,37 +66,115 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Desktop\\source\\repos\\StudentPlannerApp\\StudentPlannerApp\\Views\\User\\Login.cshtml",
+              "RelativeDocumentMoniker": "StudentPlannerApp\\Views\\User\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Desktop\\source\\repos\\StudentPlannerApp\\StudentPlannerApp\\Views\\User\\Login.cshtml",
+              "RelativeToolTip": "StudentPlannerApp\\Views\\User\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-19T10:13:15.498Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\Desktop\\source\\repos\\StudentPlannerApp\\StudentPlannerApp\\Views\\User\\Register.cshtml",
+              "RelativeDocumentMoniker": "StudentPlannerApp\\Views\\User\\Register.cshtml",
+              "ToolTip": "C:\\Users\\Desktop\\source\\repos\\StudentPlannerApp\\StudentPlannerApp\\Views\\User\\Register.cshtml",
+              "RelativeToolTip": "StudentPlannerApp\\Views\\User\\Register.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-19T10:11:50.617Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "C:\\Users\\Desktop\\source\\repos\\StudentPlannerApp\\StudentPlannerApp\\Views\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "StudentPlannerApp\\Views\\Shared\\Error.cshtml",
+              "ToolTip": "C:\\Users\\Desktop\\source\\repos\\StudentPlannerApp\\StudentPlannerApp\\Views\\Shared\\Error.cshtml",
+              "RelativeToolTip": "StudentPlannerApp\\Views\\Shared\\Error.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-19T10:05:06.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Desktop\\source\\repos\\StudentPlannerApp\\StudentPlannerApp\\Models\\User.cs",
+              "RelativeDocumentMoniker": "StudentPlannerApp\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\Desktop\\source\\repos\\StudentPlannerApp\\StudentPlannerApp\\Models\\User.cs",
+              "RelativeToolTip": "StudentPlannerApp\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T09:56:59.993Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Desktop\\source\\repos\\StudentPlannerApp\\StudentPlannerApp\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "StudentPlannerApp\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Desktop\\source\\repos\\StudentPlannerApp\\StudentPlannerApp\\Controllers\\UserController.cs",
+              "RelativeToolTip": "StudentPlannerApp\\Controllers\\UserController.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowDQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T09:56:14.224Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\Desktop\\source\\repos\\StudentPlannerApp\\StudentPlannerApp\\Web.config",
+              "RelativeDocumentMoniker": "StudentPlannerApp\\Web.config",
+              "ToolTip": "C:\\Users\\Desktop\\source\\repos\\StudentPlannerApp\\StudentPlannerApp\\Web.config",
+              "RelativeToolTip": "StudentPlannerApp\\Web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-06-19T09:55:06.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Desktop\\source\\repos\\StudentPlannerApp\\StudentPlannerApp\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "StudentPlannerApp\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\Desktop\\source\\repos\\StudentPlannerApp\\StudentPlannerApp\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "StudentPlannerApp\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-06-17T02:47:00.256Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Desktop\\source\\repos\\StudentPlannerApp\\StudentPlannerApp\\Models\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "StudentPlannerApp\\Models\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\Desktop\\source\\repos\\StudentPlannerApp\\StudentPlannerApp\\Models\\ApplicationDbContext.cs",
-              "RelativeToolTip": "StudentPlannerApp\\Models\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "DbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Desktop\\source\\repos\\StudentPlannerApp\\StudentPlannerApp\\Models\\DbContext.cs",
+              "RelativeDocumentMoniker": "StudentPlannerApp\\Models\\DbContext.cs",
+              "ToolTip": "C:\\Users\\Desktop\\source\\repos\\StudentPlannerApp\\StudentPlannerApp\\Models\\DbContext.cs",
+              "RelativeToolTip": "StudentPlannerApp\\Models\\DbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-17T01:46:16.746Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "StudySession.cs",
               "DocumentMoniker": "C:\\Users\\Desktop\\source\\repos\\StudentPlannerApp\\StudentPlannerApp\\Models\\StudySession.cs",
               "RelativeDocumentMoniker": "StudentPlannerApp\\Models\\StudySession.cs",
@@ -85,7 +187,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\Desktop\\source\\repos\\StudentPlannerApp\\StudentPlannerApp\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "StudentPlannerApp\\Controllers\\HomeController.cs",
@@ -93,12 +195,11 @@
               "RelativeToolTip": "StudentPlannerApp\\Controllers\\HomeController.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAAAnwCgAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-17T00:55:14.47Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-17T00:55:14.47Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 10,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Desktop\\source\\repos\\StudentPlannerApp\\StudentPlannerApp\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "StudentPlannerApp\\Views\\Home\\Index.cshtml",
@@ -106,25 +207,24 @@
               "RelativeToolTip": "StudentPlannerApp\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAACABAAAAAAAAAAAQwDsBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-17T00:54:43.73Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-17T00:54:43.73Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 9,
               "Title": "TimerController.cs",
               "DocumentMoniker": "C:\\Users\\Desktop\\source\\repos\\StudentPlannerApp\\StudentPlannerApp\\Controllers\\TimerController.cs",
               "RelativeDocumentMoniker": "StudentPlannerApp\\Controllers\\TimerController.cs",
               "ToolTip": "C:\\Users\\Desktop\\source\\repos\\StudentPlannerApp\\StudentPlannerApp\\Controllers\\TimerController.cs",
               "RelativeToolTip": "StudentPlannerApp\\Controllers\\TimerController.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAcwBIAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAcwD4AAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-17T00:41:20.163Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 13,
               "Title": "PomodoroSchedule.cs",
               "DocumentMoniker": "C:\\Users\\Desktop\\source\\repos\\StudentPlannerApp\\StudentPlannerApp\\Models\\PomodoroSchedule.cs",
               "RelativeDocumentMoniker": "StudentPlannerApp\\Models\\PomodoroSchedule.cs",
@@ -132,12 +232,11 @@
               "RelativeToolTip": "StudentPlannerApp\\Models\\PomodoroSchedule.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAwwAcAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-17T00:51:35.539Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-17T00:51:35.539Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "Pomodoro.cshtml",
               "DocumentMoniker": "C:\\Users\\Desktop\\source\\repos\\StudentPlannerApp\\StudentPlannerApp\\Views\\Timer\\Pomodoro.cshtml",
               "RelativeDocumentMoniker": "StudentPlannerApp\\Views\\Timer\\Pomodoro.cshtml",
@@ -145,8 +244,7 @@
               "RelativeToolTip": "StudentPlannerApp\\Views\\Timer\\Pomodoro.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-17T00:41:16.986Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-17T00:41:16.986Z"
             }
           ]
         }

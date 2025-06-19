@@ -17,10 +17,10 @@ namespace StudentPlannerApp.Controllers
 
         public ActionResult Logout()
         {
-            Session.Clear(); // Clear all session data
-            Session.Abandon(); // Optional: Abandon the session
+            Session.Clear(); 
+            Session.Abandon(); 
 
-            return RedirectToAction("Login", "User"); // Redirect to Login page
+            return RedirectToAction("Login", "User"); 
         }
 
 
@@ -36,17 +36,21 @@ namespace StudentPlannerApp.Controllers
                     SqlCommand cmd = new SqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("@Fullname", user.Fullname);
                     cmd.Parameters.AddWithValue("@Email", user.Email);
-                    cmd.Parameters.AddWithValue("@Password", user.Password); // For security: hash this in real apps
+                    cmd.Parameters.AddWithValue("@Password", user.Password);
 
                     conn.Open();
                     cmd.ExecuteNonQuery();
                 }
+
+                // Add this line to pass success message
+                TempData["SuccessMessage"] = "Registration successful! Please login.";
 
                 return RedirectToAction("Login");
             }
 
             return View(user);
         }
+
 
         // GET: User/Login
         public ActionResult Login()
@@ -63,7 +67,7 @@ namespace StudentPlannerApp.Controllers
                 string sql = "SELECT Id, Fullname FROM Users WHERE Email = @Email AND Password = @Password";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@Email", Email);
-                cmd.Parameters.AddWithValue("@Password", Password); // Insecure for real apps - hash this
+                cmd.Parameters.AddWithValue("@Password", Password); 
 
                 conn.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -74,7 +78,7 @@ namespace StudentPlannerApp.Controllers
                     Session["UserId"] = reader["Id"];
                     Session["Fullname"] = reader["Fullname"];
                     conn.Close();
-                    return RedirectToAction("Index", "Home"); // or another page after login
+                    return RedirectToAction("Index", "Home"); 
                 }
                 else
                 {
