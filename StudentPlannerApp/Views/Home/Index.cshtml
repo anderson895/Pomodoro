@@ -10,65 +10,74 @@
 
 @if (!isLoggedIn)
 {
-    <h2>Welcome, Guest!</h2>
-    <p>Please <a href="/User/Login">login</a> or <a href="/User/Register">register</a> to use the planner.</p>
+    Response.Redirect(Url.Action("Login", "User"));
 }
 else
 {
     if (Model != null && Model.Count > 0)
     {
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Activity</th>
-                    <th>Start Time</th>
-                    <th>End Time</th>
-                    <th>Pomodoro Duration (mins)</th>
-                    <th>Break Duration (mins)</th>
-                    <th>Created At</th>
-                    <th>Status</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var sched in Model)
-                {
+        <div class="overflow-x-auto">
+            <table class="table table-striped w-full min-w-[800px]">
+                <thead>
                     <tr>
-                        <td>@sched.Activity</td>
-                        <td>@sched.StartTime.ToString("MMM dd, yyyy hh:mm tt")</td>
-                        <td>@sched.EndTime.ToString("MMM dd, yyyy hh:mm tt")</td>
-                        <td>@sched.PomodoroDuration mins</td>
-                        <td>@sched.BreakDuration mins</td>
-                        <td>@sched.CreatedAt.ToString("MMM dd, yyyy hh:mm tt")</td>
-                        <td>@sched.Status</td>
-                        <td>
-                            <button class="btn btn-success btn-sm start-btn"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#pomodoroModal"
-                                    data-start="@sched.StartTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")"
-                                    data-end="@sched.EndTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")"
-                                    data-break="@sched.BreakDuration">
-                                Start
-                            </button>
-
-                            <button class="btn btn-primary btn-sm update-btn"
-                                    data-id="@sched.Id"
-                                    data-activity="@sched.Activity"
-                                    data-pomodoro="@sched.PomodoroDuration"
-                                    data-break="@sched.BreakDuration">
-                                Update
-                            </button>
-
-                            <!-- Delete Button -->
-                            <button class="btn btn-danger btn-sm delete-btn" data-id="@sched.Id">
-                                Delete
-                            </button>
-                        </td>
-
+                        <th>Activity</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>Pomodoro Duration (mins)</th>
+                        <th>Break Duration (mins)</th>
+                        <th>Created At</th>
+                        <th>Status</th>
+                        <th>Actions</th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach (var sched in Model)
+                    {
+                        <tr>
+                            <td>@sched.Activity</td>
+                            <td>@sched.StartTime.ToString("MMM dd, yyyy hh:mm tt")</td>
+                            <td>@sched.EndTime.ToString("MMM dd, yyyy hh:mm tt")</td>
+                            <td>@sched.PomodoroDuration mins</td>
+                            <td>@sched.BreakDuration mins</td>
+                            <td>@sched.CreatedAt.ToString("MMM dd, yyyy hh:mm tt")</td>
+                            <td>@sched.Status</td>
+                            <td>
+                                <div class="d-flex flex-column flex-md-row gap-2">
+
+                                    <!-- Start Button -->
+                                    <button class="btn btn-success btn-sm d-flex align-items-center gap-1 start-btn"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#pomodoroModal"
+                                            data-start="@sched.StartTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")"
+                                            data-end="@sched.EndTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")"
+                                            data-break="@sched.BreakDuration">
+                                        <i class="bi bi-play-fill"></i> Start
+                                    </button>
+
+                                    <!-- Update Button -->
+                                    <button class="btn btn-primary btn-sm d-flex align-items-center gap-1 update-btn"
+                                            data-id="@sched.Id"
+                                            data-activity="@sched.Activity"
+                                            data-pomodoro="@sched.PomodoroDuration"
+                                            data-break="@sched.BreakDuration">
+                                        <i class="bi bi-pencil-square"></i> Update
+                                    </button>
+
+                                    <!-- Delete Button -->
+                                    <button class="btn btn-danger btn-sm d-flex align-items-center gap-1 delete-btn"
+                                            data-id="@sched.Id">
+                                        <i class="bi bi-trash-fill"></i> Delete
+                                    </button>
+
+                                </div>
+                            </td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
     }
     else
     {
@@ -214,7 +223,7 @@ else
             var pomodoroDuration = 0;
             var pomodoroRemaining = 0;
             var isBreakRunning = false;
-            var breakUsed = false; 
+            var breakUsed = false;
 
             // When 'Start' button clicked
             $('.start-btn').click(function () {
@@ -227,7 +236,7 @@ else
                 isBreakRunning = false;
                 breakUsed = false; // reset break availability when new Pomodoro starts
 
-                $('#startBreakBtn').show(); 
+                $('#startBreakBtn').show();
 
                 startPomodoroTimer();
             });

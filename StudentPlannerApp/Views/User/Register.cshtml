@@ -3,20 +3,65 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Register</h2>
+<div class="container d-flex align-items-center justify-content-center min-vh-100" >
+    <div class="text-center" style="max-width: 350px; width: 100%;">
 
-<form method="post" action="/User/Register">
-    <div class="mb-3">
-        <label for="Fullname" class="form-label">Full Name</label>
-        <input type="text" class="form-control" id="Fullname" name="Fullname" required />
+
+        <!-- Title -->
+        <h2 class="fw-bold text-success">Gradle</h2>
+
+        <!-- Logo -->
+        <img src="~/Content/Images/logo.png" alt="Logo" class="img-fluid mb-3" style="max-width: 120px;">
+
+        <p class="mb-4">Sign up</p>
+
+        <!-- Validation summary / error -->
+        @if (ViewBag.Error != null)
+        {
+            <div class="alert alert-danger">@ViewBag.Error</div>
+        }
+
+        <!-- Register Form -->
+        <form method="post" action="/User/Register">
+            @Html.AntiForgeryToken()
+
+            <div class="input-group mb-3">
+                <span class="input-group-text bg-white border-end-0">
+                    <span class="material-icons">person</span>
+                </span>
+                <input type="text" class="form-control border-start-0" name="Fullname" placeholder="Full Name" required />
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text bg-white border-end-0">
+                    <span class="material-icons">email</span>
+                </span>
+                <input type="email" class="form-control border-start-0" name="Email" placeholder="Email" required />
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text bg-white border-end-0">
+                    <span class="material-icons">lock</span>
+                </span>
+                <input type="password" class="form-control border-start-0" name="Password" placeholder="Password" required />
+            </div>
+
+            <button type="submit" class="btn btn-success w-100 mb-3">Register</button>
+        </form>
+
+        <div class="d-flex align-items-center my-3">
+            <hr class="flex-grow-1">
+            <span class="mx-2 text-muted">or sign up with</span>
+            <hr class="flex-grow-1">
+        </div>
+
+        <!-- Social Icons -->
+        <div class="d-flex justify-content-center gap-3 mb-3">
+            <a href="#" class="text-dark fs-4"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-dark fs-4"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="text-dark fs-4"><i class="bi bi-google"></i></a>
+        </div>
+
+        <p class="text-muted small">Already have an account? <a href="/User/Login" class="text-success">Sign in</a></p>
     </div>
-    <div class="mb-3">
-        <label for="Email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="Email" name="Email" required />
-    </div>
-    <div class="mb-3">
-        <label for="Password" class="form-label">Password</label>
-        <input type="password" class="form-control" id="Password" name="Password" required />
-    </div>
-    <button type="submit" class="btn btn-primary">Register</button>
-</form>
+</div>

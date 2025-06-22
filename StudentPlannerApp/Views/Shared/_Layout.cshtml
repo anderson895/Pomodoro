@@ -6,45 +6,47 @@
     <title>@ViewBag.Title - StudyApp</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="/">StudyApp</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    @if (Session["UserId"] != null)
-                    {
-                        <li class="nav-item">
-                            <a class="nav-link" href="/">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/Timer/Pomodoro">Set Schedule</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/User/Logout">Logout</a>
-                        </li>
-                    }
-                    else
-                    {
-                        <li class="nav-item">
-                            <a class="nav-link" href="/User/Register">Register</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/User/Login">Login</a>
-                        </li>
-                    }
-                </ul>
+<body style="background-color: #f0f5e9;">
 
+    @if (Session["UserId"] != null)
+    {
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #d0e4c4;">
+            <div class="container">
+                <a class="navbar-brand text-success fw-bold" href="/">StudyApp</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-success" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-success" href="/Timer/Pomodoro">Set Schedule</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-success" href="/User/Logout">Logout</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+
+
+    }
+    else
+    {
+
+    }
 
     <div class="container mt-4">
         @RenderBody()
     </div>
+
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 

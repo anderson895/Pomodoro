@@ -9,6 +9,10 @@ namespace StudentPlannerApp.Controllers
     {
         private readonly string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 
+
+
+
+
         // GET: User/Register
         public ActionResult Register()
         {
