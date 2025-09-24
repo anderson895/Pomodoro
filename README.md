@@ -1,5 +1,4 @@
 # 🛠️ SQL Server Express Setup Guide
-
 This guide will help you install SQL Server Express, connect using SQL Server Management Studio (SSMS), and import/export databases.
 
 ---
