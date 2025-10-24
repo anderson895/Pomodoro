@@ -17,4 +17,3 @@ After installation, you need your computer name and SQL instance:
 1. Right-click **This PC** → **Properties** → find your **Computer Name**.  
 2. By default, SQL Server Express uses the instance name `SQLEXPRESS`.  
 3. Combine them in this format:
-
